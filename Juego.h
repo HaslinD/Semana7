@@ -1,5 +1,7 @@
 #include <string>
 #include <vector>
+#include <iostream>
+#include <typeinfo>
 
 #include "Jugador.h"
 #include "Tablero.h"
@@ -16,9 +18,11 @@ class Juego{
 		vector<int> posiciones;
 		int turnoActual;
 
+		void leerJugadores();
 	public:
 		Juego();
 		~Juego();
+		int jugar();
 };
 
 #endif

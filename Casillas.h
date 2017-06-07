@@ -1,6 +1,5 @@
 #include <iostream>
-#ifndef CASILLAS_H
-#define CASILLAS_H
+#include <typeinfo>
 
 #pragma once
 
@@ -18,8 +17,7 @@ class Casillas{
 		//determinar si se puede comprar la casilla
 		//determinar el tipo de casilla en forma de un string
 		//Propiedad, Ferrocarril, Salida, Cárcel, Impuestos, Arca, Casualidad, Libre, Servicios
-		virtual string getTipo() = 0;
+		virtual string getTipo();
 		//dueño
 		//precio
 };
-#endif

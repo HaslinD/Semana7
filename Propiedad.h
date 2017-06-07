@@ -3,6 +3,9 @@
 
 using namespace std;
 
+#ifndef PROPIEDAD_H
+#define PROPIEDAD_H
+
 class Propiedad : public Casillas{
 	private:
 		bool libre; //indica si la casilla no tiene dueño
@@ -41,6 +44,7 @@ class Propiedad : public Casillas{
 			in >> propiedad.rentaHotel;
 			in >> propiedad.precioCasa;
 			in >> propiedad.precioHotel;
+            in.ignore(1, '\n');
 			return in;
 		}
 		//inicializa libre
@@ -74,3 +78,5 @@ class Propiedad : public Casillas{
 			}
 		}
 };
+
+#endif

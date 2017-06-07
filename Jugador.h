@@ -1,11 +1,16 @@
 #include <string>
 #include "Casillas.h"
+#include "Propiedad.h"
 #include <vector>
 #include <iostream>
 
+
 using namespace std;
 
-class Jugador{
+#ifndef JUGADOR_H
+#define JUGADOR_H
+
+class Jugador : public Casillas{
 	private:
 		string pieza;
 		vector <Casillas*> casillas;
@@ -27,6 +32,8 @@ class Jugador{
 		double recibirDinero(double); //Tarea
 		void pagar(double); //Tarea
 
+		bool hasMonopolyProperty(Propiedad*);
+
 		friend istream& operator >> (istream& in, Jugador& jugador){
 			in >> jugador.pieza;
 			in >> jugador.dinero;
@@ -34,3 +41,5 @@ class Jugador{
 			return in;
 		}
 };
+
+#endif

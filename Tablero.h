@@ -1,16 +1,18 @@
+#include "Propiedad.h"
 #include "Casillas.h"
 
 using namespace std;
 #include <iostream>
 #include <vector>
 
-class Tablero : public Casillas{
+class Tablero{
 	private:
 		vector<Casillas*> casillas;
 
 	public:
-		Casillas* getCasilla(int);
 		Tablero();
+		Casillas* getCasilla(int);
+		int getCantidadCasillas(){ return casillas.size(); } //definicion inline
 		~Tablero();
 };
 

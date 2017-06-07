@@ -1,14 +1,15 @@
-#include <iostream>
+#include <iostream>	
 #include <fstream>
 
 #include "Casillas.h"
 #include "Propiedad.h"
 #include "Jugador.h"
+#include "Juego.h"
 
 using namespace std;
 
 int main(){
-	Casillas* c = new Propiedad();
+	Casillas* c = new Casillas();
 	delete c;
 	Jugador* player = new Jugador();
 	/*cin >> *player;
@@ -43,6 +44,11 @@ int main(){
 	//cout << "Dinero: " << player -> getDinero() << endl;
 
 	delete player;
+
+	//probar juego y tablero
+	Juego* juego = new Juego();
+
+	delete juego;
 	
 	return 0;
 }

@@ -1,11 +1,36 @@
 #include "Jugador.h"
+#include <string>
+#include <vector>
 
 using namespace std;
 
+bool Jugador::hasMonopolyProperty(Propiedad* prop){
+	string color = prop -> getColor();
+	int contador = 0;
+
+	for (int i = 0; i < casillas.size(); ++i)
+	{
+		Propiedad contar = dynamic_cast<Propiedad*>(casillas[i]);
+		if (contar != NULL)
+		{
+			//comparar var color el color de contar
+			if (color.compare(contar -> getColor()) == 0)
+			{
+				contador++; 	
+			} 
+		}
+	}//contar
+	//TODO: completar funcion
+	if (contador == 3)
+	{
+		return false;
+	} else {
+		return true;
+	}
+}
+
 Jugador::Jugador(){
-	pieza = "";
-	dinero = 0;
-	turno = 0;
+	dinero = 1500;
 }
 
 int Jugador::getTurno(){
@@ -34,5 +59,14 @@ double Jugador::recibirDinero(double rdinero){
 }
 
 void Jugador::pagar(double ppagar){
-	dinero - ppagar;
+	dinero -= ppagar;
 }
+
+void Jugador::agregarCasilla(Casillas* casilla){
+	casillas.push_back(casilla);
+}
+
+vector<Casillas*>& Jugador::getCasillas(){
+	return casillas;
+}
+
